@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../static/css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/register.css"/>
+		<script src="../../static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>注册会员</title>
+	</head>
+	<body>
+		
+		{% include 'head.html' %}
+		
+		<div class="box">
+			<h2>用户注册</h2>
+			<form action="#">
+				<div>昵称：<input type="text" placeholder="请输入昵称"></div>
+				<div>密码：<input type="password" placeholder="请输入密码"></div>
+				<input type="button" onclick="document.location.href='/user/loginPage'" value="登录">
+				<input type="button" onclick="btnRegister()" value="注册">
+			</form>
+			<div id="msg"></div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		function btnRegister(){
+			$.ajax({
+				url:'/user/register',
+				data:{
+					nickName:$('input[type=text]').val(),
+					password:$('input[type=password]').val()
+				},
+				type:'post',
+				dataType:'json',
+				success:function(data){
+					$('#msg').text(data.message);
+				}
+			});
+		}
+	</script>
+</html>

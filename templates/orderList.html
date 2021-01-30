@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="../static/css/common_style.css">
+    <link rel="stylesheet" href="../static/css/orderList.css">
+    <script src="../static/js/jquery.min.js"></script>
+</head>
+<body>
+    {% include 'head.html' %}
+
+    <div class="list">
+
+        <div class="item">
+            <div>编号</div>
+            <div>订单ID</div>
+            <div>商品标题</div>
+            <div>商品价格</div>
+            <div>购买数量</div>
+            <div>购买时间</div>
+        </div>
+        {% if length %}
+            {% for i,o in orders %}
+                <div class="item" orderId="{{o.id}}" shopId="{{o.shopId}}">
+                    <div>{{i+1}}</div>
+                    <div>{{o.orderId}}</div>
+                    <div>{{o.shopTitle}}</div>
+                    <div>{{o.endPrice}}</div>
+                    <div>{{o.orderNumber}}</div>
+                    <div>{{o.createTime}}</div>
+                </div>
+            {% endfor %}
+        {% else%}
+            <div class="item"><div style="width:99.25%">没有数据</div></div>
+        {% endif %}
+    </div>
+    <div style="height:200px;"></div>
+</body>
+</html>

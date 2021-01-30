@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/common_style.css">
+    <link rel="stylesheet" href="../static/css/salesOrder_bar.css">
+    <link rel="stylesheet" href="../static/css/salesOrder_list.css">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/salesOrder.js"></script>
+    <title>已售商品</title>
+</head>
+<body onload="onLoad()">
+    <h3 style="padding-left:20px">已售订单</h3>
+    <div style="height:1px;background-color:#ddd;margin-top:10px;"></div>
+    <div class="bar" style="margin-top:30px;">
+        <span>订单号：</span><input type="text"><input type="button" onclick="getOrderList({type:1,orderId:$('.bar input[type=text]').eq(0).val()})" value="搜索单号">
+        <span>商品名称：</span><input type="text"><input type="button" onclick="getOrderList({type:2,likeTitle:$('.bar input[type=text]').eq(1).val()})" value="搜索商品">
+    </div>
+    <div class="bar2">
+        <span>下单时间：</span>
+        <div class="date">
+            <input type='date' style="margin-left:6px;"/><span style="font-size:13px;margin:0 6px 0 6px;">到</span><input type='date'/>
+        </div>
+        <input type="button" onclick="getOrderList({type:3,startDate:$('.date input[type=date]:nth-of-type(1)').val(),endDate:$('.date input[type=date]:nth-of-type(2)').val()})" value="搜索">
+        <div class="day" onclick="getOrderList({type:4})">今天</div>
+        <div class="day" onclick="getOrderList({type:5})">昨天</div>
+        <div class="day" onclick="getOrderList({type:6})">近7天</div>
+        <div class="day" onclick="getOrderList({type:7})">近30天</div>
+        <div class="day"  onclick="getOrderList()">所有</div>
+    </div>
+    <div style="height:6px;background-color:#eee;margin-top:10px;"></div>
+
+     <div class="item item-title" style="margin-top:20px;">
+        <div>编号</div>
+        <div>订单</div>
+        <div>商品标题</div>
+        <div>价格</div>
+        <div>购买价格</div>
+        <div>购买数量</div>
+        <div>创建时间</div>
+    </div>
+
+    <div class="list">
+    </div>
+
+</body>
+</html>

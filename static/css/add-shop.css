@@ -1,0 +1,56 @@
+.add-box{
+    position:fixed;
+    width:450px;
+    height:500px;
+    border:1px solid #ddd;
+    background-color:white;
+    top:50%;
+    left:50%;
+    margin-top:-250px;
+    margin-left:-225px;
+}
+.add-bar{
+    height:32px;
+    background-color:#F8F8F8;
+    display:flex;
+    align-items:center;
+}
+.add-title{
+    width:90%;
+    padding-left:15px;
+    color:#777;
+    font-size:12px;
+}
+.ipt-div{
+    margin-top:15px;
+}
+.ipt-div span{
+    display:inline-block;
+    width:23%;
+    text-align:right;
+    font-size:13px;
+}
+textarea{
+    outline:none;
+    padding:8px;
+    border-color:#aaa;
+    border-radius:3px;
+    resize:none;
+}
+select{
+    outline:none;
+    padding:0 8px;
+    height:28px;
+    width:64% !important;
+}
+.ipt-div select,
+.ipt-div input{
+    width:60%;
+    border:1px solid #aaa;
+    border-radius:3px;
+}
+#msg{
+    margin-top:20px;
+    text-align:center;
+    color:red;
+}

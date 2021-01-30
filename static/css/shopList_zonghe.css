@@ -1,0 +1,42 @@
+select{
+	outline: none;
+	border: none;
+}
+  .zonghe-bar{
+	  width: 1155px;
+	  height: 38px;
+	  border: 1px solid #ccc;
+	  margin:50px auto 0;
+  }
+.zonghe-bar > div{
+	height: 100%;
+	display: flex;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	color: #888;
+}
+.zonghe-bar > div:nth-of-type(1){
+	background-color: #eee;
+	width: 100px;
+}
+.zonghe-bar > div:nth-of-type(2){
+	width: 100px;
+	border-right: 1px solid #ccc;
+}
+.zonghe-bar > div:nth-of-type(3){
+	width: 100px;
+	border-right: 1px solid #ccc;
+}
+.zonghe-bar > div:nth-of-type(4){
+	width: 220px;
+	border-right: 1px solid #ccc;
+}
+.zonghe-bar input{
+	height: 58%;
+	width: 50px;
+	border: 1px solid #ccc;
+	margin-left: 10px;
+	font-size: 12px;
+}

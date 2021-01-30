@@ -1,0 +1,70 @@
+.list{
+	width: 1155px;
+	margin:20px auto 0;
+	border:1px solid #ddd;
+}
+.list > .item{
+	width:230px;
+	height: 365px;
+	margin: -1px 0 0 -1px;
+	border:1px solid #ddd;
+	float: left;
+}
+.list::after{
+	display: block;
+	content:'';
+	clear: both;
+}
+.list > .item[last='1']{
+	border-right: 0;
+}
+.list > .item[after='1']{
+	border-bottom: 0;
+}
+.list > .item > *{
+		display: block;
+		margin: 0 auto;
+		width: 200px;
+}
+.list > .item > img{
+	height: 200px;
+	margin-top: 20px;
+}
+.list > .item .title{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	height: 38px;
+	font-size: 13px;
+	color: #999;
+	margin-top: 10px;
+}
+.price{
+	font-size: 18px;
+	color: red;
+}
+.list > .item .shop-sign{
+	display: flex;
+	align-items: center;
+	height: 25px;
+	font-size: 12px;
+	color: #aaa;
+}
+.list > .item .shop-sign img{
+	height: 16px;
+	width: 16px;
+	margin-right: 3px;
+	margin-top: 2px;
+}
+.list > .item .line{
+	height: 1px;
+	background-color: #ddd;
+	margin-top: 10px;
+}
+.list > .item .sales{
+	margin-top: 10px;
+	text-align: right;
+	font-size: 12px;
+	color: #aaa;
+}

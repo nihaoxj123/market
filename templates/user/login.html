@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员登录</title>
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/login.css">
+</head>
+<body>
+	
+	{% include 'head.html' %}
+	
+<div class="login-box">
+    <h2>用户登录</h2>
+    <div style="height:1px;background-color:#f1f1f1;"></div>
+    <form action="/user/login" method="post">
+        <input type="text" name="usercode" placeholder="请输入ID">
+        <input type="password" name="password" placeholder="请输入密码">
+		<input type="button" value="注册" onclick="document.location.href='/user/registerPage';">
+        <input type="submit" value="登录">
+        <div id="msg"></div>
+    </form>
+
+   {% if msg %}
+    <script>
+        msgDiv = document.getElementById('msg');
+        msgDiv.innerText = '{{msg}}';
+        setTimeout(function(){msgDiv.innerText='';},2000);
+    </script>
+    {% endif %}
+</div>
+</body>
+</html>

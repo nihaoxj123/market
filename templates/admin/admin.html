@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商城管理</title>
+    <link rel="stylesheet" href="../static/css/common_style.css">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <script src="../static/js/jquery.min.js"></script>
+</head>
+<body>
+<ul id="left">
+    <li><div onclick="changeIframe('salesShopPage')">在售商品</div></li>
+    <li><div onclick="changeIframe('salesOrderPage')">已售商品</div></li>
+</ul>
+<div class="head">
+    您好：<span style="color:#ff4400">{{nickName}}</span>
+    <a href="/shop">商城首页</a>
+    <a href="/user/loginout">退出登录</a>
+</div>
+
+<iframe src="salesShopPage" frameborder="0"></iframe>
+<script>
+function changeIframe(url){
+    $('iframe').attr('src',url);
+}
+
+</script>
+
+</body>
+</html>

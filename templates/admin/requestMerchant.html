@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../static/css/common_style.css"/>
+	<link rel="stylesheet" type="text/css" href="../../static/css/requestMerchant.css"/>
+	<script src="../../static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>申请卖家</title>
+</head>
+<body>
+    <div class="wrap">
+		<div class="title">
+			<h1>XX商城</h1>
+			&nbsp;&nbsp;&nbsp;
+			<h3>申请卖家</h3>
+		</div>
+	</div>
+	
+	<div style="height: 1px;background-color: #ccc;"></div>
+	<div class="content">
+		<div id="msg">
+			{% if msg %}
+				{{msg}}
+			{% endif %}
+		</div>
+		<input type="text" placeholder="请输入">
+		<input type="text" placeholder="请输入">
+		<input type="text" placeholder="请输入">
+		<input type="text" placeholder="请输入">
+		<input type="text" placeholder="请输入">
+		<div class="tips">
+			<div></div>
+			无需输入，点击申请即可
+		</div>
+		<div class="btn" onclick="btn()">申请</div>
+	</div>
+
+	<script>
+		setTimeout(function(){
+			$('#msg').text('');
+		},1500);
+		function btn(){
+			$.ajax({
+				url:'/admin/requestMerchant',
+				data:{},
+				type:'post',
+				dataType:'json',
+				success:function(data){
+
+					$('#msg').text(data.message);
+					setTimeout(function(){
+						$('#msg').text('');
+						if (data.code == 1){
+							document.location.reload();
+						}
+					},1500);
+				}
+			});
+		}
+	</script>
+</body>
+</html>

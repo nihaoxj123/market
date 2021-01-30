@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="../static/css/common_style.css">
+    <link rel="stylesheet" href="../static/css/shopList_search.css">
+    <link rel="stylesheet" href="../static/css/shopList_zonghe.css">
+    <link rel="stylesheet" href="../static/css/shopList_list.css">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/shopList.js"></script>
+</head>
+<body onload="onLoad()">
+
+{% include 'head.html' %}
+
+	<div class="search">
+		<div class="logo">
+			<h1>XX商城</h1>
+		</div>
+		<div class="box">
+			<input type="text"><input type="button" value="搜索">
+		</div>
+	</div>
+	
+
+	<div class="zonghe-bar">
+		<div>综合排序</div>
+		<div>
+			销量：
+			<select value="1">
+				<option value ="1">高</option>
+				<option value ="2">低</option>
+			</select>
+		</div>
+		<div>
+			价钱：
+			<select value="1">
+				<option value ="1">高</option>
+				<option value ="2">低</option>
+			</select>
+		</div>
+		<div>
+			<input type="text" placeholder="￥">
+			<span style="margin-left: 10px;">-</span>
+			<input type="text" placeholder="￥">
+			<input type="button" value="确定">
+		</div>
+	</div>
+	
+	<div class="list">
+	</div>
+	
+	<div style="height: 100px;display: flex;justify-content: center;align-items: center;color: #999;">已经到底了</div>
+
+</body>
+</html>

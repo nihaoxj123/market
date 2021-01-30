@@ -1,0 +1,30 @@
+ body{
+	background-color:#f1f1f1;
+}
+
+.list{
+	width:1170px;
+	margin:50px auto 0;
+}
+.list .item{
+	height:38px;
+}
+.list .item:nth-of-type(1) > * {
+	border-top:1px solid #666;
+	background-color:#999;
+}
+.list .item > *:nth-of-type(1){
+	border-left:1px solid #666;
+}
+
+.list .item > *{
+	height:100%;
+	width:16.4%;
+	float:left;
+	border-right:1px solid #666;
+	border-bottom:1px solid #666;
+
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}

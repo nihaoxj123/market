@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/common_style.css">
+    <link rel="stylesheet" href="../static/css/salesShop_bar.css">
+    <link rel="stylesheet" href="../static/css/salesShop_list.css">
+    <link rel="stylesheet" href="../static/css/add-shop.css">
+    <link rel="stylesheet" href="../static/css/menu.css">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/salesShop.js"></script>
+    <script src="../static/js/addShop.js"></script>
+    <script src="../static/js/menu.js"></script>
+    <title>线上商品</title>
+</head>
+<body onload="onLoad()">
+
+    <h3 style="padding-left:20px">我的商品</h3>
+    <div style="height:1px;background-color:#ddd;margin-top:10px;"></div>
+    <div class="bar">
+        <input type="text" likeTitle="" placeholder="请输入商品名称"><input type="button" onclick="getLikeTitleList()" value="搜索">
+        <div class="date">
+            <input type='date' style="margin-left:6px;"/><span style="font-size:13px;margin:0 6px 0 6px;">到</span><input type='date' value=""/>
+        </div>
+        <input type="button" onclick="getShopByDate()" value="搜索">
+
+        <div class="btn-green" style="margin-left:80px;" onclick="addBtnClick()">添加商品</div>
+        <div class="btn-green" style="margin-left:20px;" onclick="document.location.reload()">刷新</div>
+    </div>
+    <div style="height:6px;background-color:#eee;margin-top:10px;"></div>
+
+
+    <div class="item item-title" style="margin-top:20px;">
+        <div>编号</div>
+        <div>标题</div>
+        <div>价格</div>
+        <div>总数量</div>
+        <div>已卖数量</div>
+        <div>状态</div>
+        <div>类目</div>
+        <div>创建时间</div>
+        <div>操作</div>
+    </div>
+
+    <div class="list">
+    </div>
+
+</body>
+</html>
